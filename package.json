@@ -1,0 +1,29 @@
+{
+  "name": "anchan31.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "dev": "npx -y http-server -p 8080",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anchan31/anchan31.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Anchan31/anchan31.github.io/issues"
+  },
+  "homepage": "https://github.com/Anchan31/anchan31.github.io#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "firebase-admin": "^13.9.0",
+    "mammoth": "^1.12.0",
+    "pdf-parse": "^1.1.1",
+    "razorpay": "^2.9.6"
+  }
+}

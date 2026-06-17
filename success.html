@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Successful | Work Cosmo Recruitment Suite</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            background: #22c55e;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 2rem;
+            animation: scaleIn 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="nav-bar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+                    <img src="src/images/ngu_logo.png" alt="Work Cosmo Logo" style="width: 32px; height: 32px; border-radius: 8px; object-fit: contain;">
+                    <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.25rem; letter-spacing: -1px; color: var(--text-primary);">Work Cosmo<span style="color: var(--primary);">.</span></span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section style="padding-top: 180px; padding-bottom: 120px; text-align: center;">
+        <div class="container">
+            <div class="success-icon">
+                <i class="fas fa-check"></i>
+            </div>
+            <h1 class="text-gradient reveal active" style="margin-bottom: 1.5rem;">Welcome to the Ecosystem.</h1>
+            <p class="reveal active" style="font-size: 1.25rem; max-width: 600px; margin: 0 auto 3rem; color: var(--text-secondary);">
+                Your payment has been successfully processed. You now have full access to the high-performance tools in the Work Cosmo Recruitment Suite.
+            </p>
+            
+            <div class="reveal active" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="index.html" class="btn btn-primary" style="padding: 1.25rem 3rem;">Go to Dashboard</a>
+                <a href="contact.html" class="btn btn-outline" style="padding: 1.25rem 3rem;">Contact Support</a>
+            </div>
+
+            <div style="margin-top: 4rem; padding: 2rem; background: var(--bg-subtle); border-radius: 24px; display: inline-block; border: 1px solid var(--border);">
+                <p style="font-size: 0.9rem; color: var(--text-muted);">
+                    <span id="order-id-label">Order ID: </span><span id="order-id" style="font-weight: 700; color: var(--text-primary);">...</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Extract Order ID or Subscription ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const orderId = urlParams.get('order_id');
+        const subId = urlParams.get('subscription_id');
+        
+        if (orderId) {
+            document.getElementById('order-id-label').innerText = 'Order ID: ';
+            document.getElementById('order-id').innerText = orderId;
+        } else if (subId) {
+            document.getElementById('order-id-label').innerText = 'Subscription ID: ';
+            document.getElementById('order-id').innerText = subId;
+        }
+
+        // Simple Confetti Effect
+        function createConfetti() {
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.top = '-10px';
+                confetti.style.backgroundColor = ['#3b82f6', '#22c55e', '#a855f7', '#f59e0b'][Math.floor(Math.random() * 4)];
+                confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                document.body.appendChild(confetti);
+
+                const animation = confetti.animate([
+                    { top: '-10px', opacity: 1 },
+                    { top: '100vh', opacity: 0 }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(0, 0, 0.2, 1)'
+                });
+
+                animation.onfinish = () => confetti.remove();
+            }
+        }
+        setTimeout(createConfetti, 200);
+    </script>
+</body>
+
+</html>

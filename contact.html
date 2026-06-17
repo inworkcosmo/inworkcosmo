@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Work Cosmo Recruitment Suite</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Firebase SDK (v8 Compat) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <header class="nav-bar">
+        <div class="container" style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+                    <img src="src/images/ngu_logo.png" alt="Work Cosmo Logo" style="width: 32px; height: 32px; border-radius: 8px; object-fit: contain;">
+                    <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1.25rem; letter-spacing: -1px; color: var(--text-primary);">Work Cosmo<span style="color: var(--primary);">.</span></span>
+                </a>
+            </div>
+            <div style="display: flex; gap: 2.5rem; align-items: center;">
+                <a href="index.html#suite" style="color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.95rem;">The Suite</a>
+                <a href="index.html#pricing" style="color: var(--text-secondary); text-decoration: none; font-weight: 500; font-size: 0.95rem;">Pricing</a>
+                <a href="https://space.workcosmo.in" class="btn btn-primary" style="padding: 0.6rem 1.5rem; font-size: 0.9rem;">Enter Space</a>
+            </div>
+        </div>
+    </header>
+
+    <section style="padding-top: 180px; padding-bottom: 80px;">
+        <div class="container">
+            <div class="grid-2">
+                <div class="reveal active">
+                    <h1 class="text-gradient" style="margin-bottom: 2rem;">Let's Talk Growth.</h1>
+                    <p style="font-size: 1.2rem; margin-bottom: 3rem;">Ready to transform your recruitment process? Our team is here to help you design a high-performance hiring ecosystem tailored to your needs.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div style="display: flex; gap: 1.5rem; align-items: center;">
+                            <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Email Us</h4>
+                                <p style="color: var(--text-secondary);">sales.workcosmo.in@gmail.com</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1.5rem; align-items: center;">
+                            <div style="width: 48px; height: 48px; border-radius: 12px; background: var(--bg-subtle); display: flex; align-items: center; justify-content: center; color: var(--primary);">
+                                <i class="fas fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 style="font-size: 1.1rem; margin-bottom: 0.25rem;">Office</h4>
+                                <p style="color: var(--text-secondary);">Remote First | HQ: Noida, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reveal active">
+                    <div class="card" style="padding: 3rem;">
+                        <form id="contact-form" style="display: flex; flex-direction: column; gap: 1.5rem;">
+                            <div>
+                                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.9rem;">Full Name</label>
+                                <input type="text" name="name" required placeholder="John Doe" style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-subtle); font-family: inherit;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.9rem;">Work Email</label>
+                                <input type="email" name="email" required placeholder="john@company.com" style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-subtle); font-family: inherit;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.9rem;">Company Size</label>
+                                <select name="company_size" style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-subtle); font-family: inherit;">
+                                    <option value="1-50">1-50 employees</option>
+                                    <option value="51-200">51-200 employees</option>
+                                    <option value="201-1000">201-1000 employees</option>
+                                    <option value="1000+">1000+ employees</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label style="display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.9rem;">How can we help?</label>
+                                <textarea name="message" required rows="4" placeholder="Tell us about your hiring goals..." style="width: 100%; padding: 0.75rem 1rem; border-radius: 8px; border: 1px solid var(--border); background: var(--bg-subtle); font-family: inherit; resize: none;"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="padding: 80px 0; border-top: 1px solid var(--border);">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem;">
+                <div>
+                    <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+                        <img src="src/images/ngu_logo.png" alt="Work Cosmo Logo" style="width: 24px; height: 24px; border-radius: 6px; object-fit: contain;">
+                        <span style="font-family: var(--font-heading); font-weight: 800; font-size: 1rem; letter-spacing: -1px; color: var(--text-primary);">Work Cosmo<span style="color: var(--primary);">.</span></span>
+                    </div>
+                    <p style="font-size: 0.85rem;">The future of recruitment, unified.</p>
+                </div>
+                <div style="display: flex; gap: 3rem; flex-wrap: wrap;">
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <span style="font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-primary);">Product</span>
+                        <a href="index.html#suite" style="font-size: 0.85rem; color: var(--text-secondary); text-decoration: none;">Features</a>
+                        <a href="index.html#pricing" style="font-size: 0.85rem; color: var(--text-secondary); text-decoration: none;">Pricing</a>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <span style="font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-primary);">Company</span>
+                        <a href="about.html" style="font-size: 0.85rem; color: var(--text-secondary); text-decoration: none;">About</a>
+                        <a href="contact.html" style="font-size: 0.85rem; color: var(--text-secondary); text-decoration: none;">Contact</a>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+                        <span style="font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-primary);">Legal</span>
+                        <a href="terms.html" style="font-size: 0.85rem; color: var(--text-secondary); text-decoration: none;">Terms</a>
+                        <a href="privacy.html" style="font-size: 0.85rem; color: var(--text-secondary); text-decoration: none;">Privacy</a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <p style="font-size: 0.8rem; color: var(--text-muted);">&copy; 2026 Work Cosmo Suite. Build for growth.</p>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="https://www.instagram.com/workcosmo/" target="_blank" style="color: var(--text-muted); font-size: 1rem;"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/workcosmo/" target="_blank" style="color: var(--text-muted); font-size: 1rem;"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
