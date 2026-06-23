@@ -108,19 +108,19 @@ const suiteData = {
         title: "Recruit Dashboard",
         desc: "The mission control for your hiring team. Manage thousands of applications, automate communications, and generate deep-dive performance reports instantly.",
         features: ["Automated Pipeline Management", "Built-in Offer Letter Engine", "Advanced Export & Analytics"],
-        img: "./src/images/app_recruit.png"
+        img: "/src/images/app_recruit.png"
     },
     candidate: {
         title: "Candidate Portal",
         desc: "A premium, mobile-first experience that treats candidates like customers. Multi-step profiles, real-time tracking, and zero-friction applications.",
         features: ["Native-Level Mobile UX", "Interactive Status Timeline", "One-Click Documentation"],
-        img: "./src/images/app_candidate.png"
+        img: "/src/images/app_candidate.png"
     },
     share: {
         title: "Share Portal",
         desc: "Collaborative hiring made professional. Securely share read-only candidate snapshots with stakeholders. No more messy email attachments.",
         features: ["Secure Token Links", "Inline Document Preview", "Feedback Collection Bridge"],
-        img: "./src/images/app_share.png"
+        img: "/src/images/app_share.png"
     },
 };
 
