@@ -1,13 +1,5 @@
 const admin = require('firebase-admin');
 
-// Initialize Firebase Admin (Ensure serviceAccount is in env)
-if (!admin.apps.length) {
-  const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
-  });
-}
-
 module.exports = async (req, res) => {
   // CORS setup
   const origin = req.headers.origin || '';
@@ -29,6 +21,22 @@ module.exports = async (req, res) => {
 
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method not allowed' });
+  }
+
+  // Initialize Firebase Admin (Ensure serviceAccount is in env)
+  try {
+    if (!admin.apps.length) {
+      if (!process.env.FIREBASE_SERVICE_ACCOUNT) {
+        throw new Error("FIREBASE_SERVICE_ACCOUNT environment variable is not defined");
+      }
+      const serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+      admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount)
+      });
+    }
+  } catch (initError) {
+    console.error("Firebase Admin Initialization Error:", initError);
+    return res.status(500).json({ error: "Internal Server Configuration Error", details: initError.message });
   }
 
   const { idToken } = req.body || {};
