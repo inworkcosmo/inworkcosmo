@@ -388,7 +388,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 email: formData.get('email'),
                 company_size: formData.get('company_size'),
                 message: formData.get('message'),
-                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                createdAt: firebase.firestore.FieldValue.serverTimestamp()
             };
 
             try {
