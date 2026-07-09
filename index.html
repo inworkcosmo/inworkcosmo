@@ -20,8 +20,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="mobile-web-app-capable" content="yes" />
     <title>Job Portal | Work Cosmo Suite</title>
-    <link rel="icon" type="image/png" href="/src/images/ngu_logo.png" />
-    <link rel="apple-touch-icon" href="/src/images/ngu_logo.png" />
+    <link rel="icon" type="image/png" href="https://workcosmo.in/src/images/wc_logo.png" />
+    <link rel="apple-touch-icon" href="https://workcosmo.in/src/images/wc_logo.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link
       rel="stylesheet"
@@ -795,7 +795,7 @@
                 <input
                   type="password"
                   id="reg-password"
-                  placeholder="••••••••"
+                  placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                   class="theme-input"
                 />
               </div>
@@ -867,7 +867,7 @@
                 <input
                   type="password"
                   id="login-password"
-                  placeholder="••••••••"
+                  placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢"
                   class="theme-input"
                 />
               </div>
@@ -1260,7 +1260,7 @@
                       <div class="relative mt-1">
                         <span
                           class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-sm"
-                          >₹</span
+                          >â‚¹</span
                         >
                         <input
                           type="number"
@@ -1282,7 +1282,7 @@
                       <div class="relative mt-1">
                         <span
                           class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-bold text-sm"
-                          >₹</span
+                          >â‚¹</span
                         >
                         <input
                           type="number"
@@ -1817,7 +1817,7 @@
                           href="#"
                           target="_blank"
                           class="hover:text-blue-500 transition-colors font-bold block truncate"
-                          >—</a
+                          >â€”</a
                         >
                       </div>
                     </div>
@@ -1841,7 +1841,7 @@
                           href="#"
                           target="_blank"
                           class="hover:text-emerald-500 transition-colors font-bold block leading-snug"
-                          >—</a
+                          >â€”</a
                         >
                       </div>
                     </div>
@@ -2946,7 +2946,7 @@
           return;
         }
 
-        // Primary Color — inject a dynamic stylesheet so Tailwind elements also update
+        // Primary Color â€” inject a dynamic stylesheet so Tailwind elements also update
         if (portalSettings.primaryColor) {
           const c = portalSettings.primaryColor;
           document.documentElement.style.setProperty("--primary-color", c);
@@ -3155,7 +3155,7 @@
         .getElementById("btn-logout")
         .addEventListener("click", () => signOut(auth));
 
-      // Resume Upload (Cloudinary) — Express Onboarding Flow
+      // Resume Upload (Cloudinary) â€” Express Onboarding Flow
       const resumeFileInput = document.getElementById("resume-file-input");
       const resumeUploadLabel = document.getElementById("express-resume-label");
       const resumeProgressBar = document.getElementById("resume-progress-bar");
@@ -3441,7 +3441,7 @@
         }
       }
 
-      // Aadhaar Upload (Cloudinary) — Optional in Express flow
+      // Aadhaar Upload (Cloudinary) â€” Optional in Express flow
       const aadhaarFileInput = document.getElementById("aadhaar-file-input");
       const aadhaarUploadLabel = document.getElementById(
         "aadhaar-upload-label",
@@ -3589,7 +3589,7 @@
 
       const updateStepperUI = () => updateExpressStepperUI(profileStep);
 
-      // Submit Profile — Express Onboarding (Aadhaar is now optional)
+      // Submit Profile â€” Express Onboarding (Aadhaar is now optional)
       document
         .getElementById("form-profile")
         .addEventListener("submit", async (e) => {
@@ -3626,7 +3626,7 @@
           if (!profileData.resumeUrl && uploadedResumeUrl) {
             profileData.resumeUrl = uploadedResumeUrl;
           }
-          // Aadhaar is optional — only include if uploaded
+          // Aadhaar is optional â€” only include if uploaded
           if (!profileData.aadhaarUrl && uploadedAadhaarUrl) {
             profileData.aadhaarUrl = uploadedAadhaarUrl;
           }
@@ -3790,7 +3790,7 @@
           },
           (error) => {
             if (error.code === "permission-denied") {
-              // Companies collection is not publicly readable — hide the tab gracefully
+              // Companies collection is not publicly readable â€” hide the tab gracefully
               const tabCompanies = document.getElementById("tab-companies");
               if (tabCompanies) tabCompanies.classList.add("hidden");
               const companiesPane = document.getElementById("companies-pane");
@@ -4030,33 +4030,33 @@
           ? p.name.charAt(0).toUpperCase()
           : "C";
         document.getElementById("prof-name").innerText = p.name || "Anonymous";
-        document.getElementById("prof-email").innerText = p.email || "—";
-        document.getElementById("prof-phone").innerText = p.phone || "—";
+        document.getElementById("prof-email").innerText = p.email || "â€”";
+        document.getElementById("prof-phone").innerText = p.phone || "â€”";
         document.getElementById("prof-location-badge").innerHTML =
-          `<i class="fas fa-location-dot mr-1"></i>${p.city || p.location || "—"}`;
+          `<i class="fas fa-location-dot mr-1"></i>${p.city || p.location || "â€”"}`;
         document.getElementById("prof-exp-badge").innerHTML =
           `<i class="fas fa-briefcase mr-1"></i>${p.experience || "0"} Yrs Exp`;
 
         // Personal
         document.getElementById("prof-personal-details").innerHTML = `
                 <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
-                    <span class="text-slate-400">Date of Birth</span><span class="font-bold text-slate-800 dark:text-slate-200">${p.dob || "—"}</span>
+                    <span class="text-slate-400">Date of Birth</span><span class="font-bold text-slate-800 dark:text-slate-200">${p.dob || "â€”"}</span>
                 </div>
                 <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
-                    <span class="text-slate-400">Gender</span><span class="font-bold text-slate-800 dark:text-slate-200">${p.gender || "—"}</span>
+                    <span class="text-slate-400">Gender</span><span class="font-bold text-slate-800 dark:text-slate-200">${p.gender || "â€”"}</span>
                 </div>
             `;
 
         // Professional
         document.getElementById("prof-professional-details").innerHTML = `
                 <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
-                    <span class="text-slate-400">Current Role/Company</span><span class="font-bold text-slate-800 dark:text-slate-200 text-right">${p.currentCompany || "—"}</span>
+                    <span class="text-slate-400">Current Role/Company</span><span class="font-bold text-slate-800 dark:text-slate-200 text-right">${p.currentCompany || "â€”"}</span>
                 </div>
                 <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
-                    <span class="text-slate-400">Qualification</span><span class="font-bold text-slate-800 dark:text-slate-200 text-right">${p.qualification || "—"}</span>
+                    <span class="text-slate-400">Qualification</span><span class="font-bold text-slate-800 dark:text-slate-200 text-right">${p.qualification || "â€”"}</span>
                 </div>
                 <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
-                    <span class="text-slate-400">Notice Period</span><span class="font-bold text-slate-800 dark:text-slate-200">${p.noticePeriod ? p.noticePeriod + " Days" : "—"}</span>
+                    <span class="text-slate-400">Notice Period</span><span class="font-bold text-slate-800 dark:text-slate-200">${p.noticePeriod ? p.noticePeriod + " Days" : "â€”"}</span>
                 </div>
                 <div class="flex justify-between pt-1">
                     <span class="text-slate-400">Skills</span>
@@ -4070,7 +4070,7 @@
                                     `<span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 rounded text-[10px] font-bold">${s.trim()}</span>`,
                                 )
                                 .join("")
-                            : "—"
+                            : "â€”"
                         }
                     </div>
                 </div>
@@ -4080,17 +4080,17 @@
         document.getElementById("prof-address-details").innerHTML = `
                 <div class="flex flex-col gap-1 border-b border-slate-100 dark:border-slate-800 pb-2">
                     <span class="text-slate-400">Full Address</span>
-                    <span class="font-bold text-slate-800 dark:text-slate-200 leading-tight">${p.fullAddress || p.address || p.location || "—"}</span>
+                    <span class="font-bold text-slate-800 dark:text-slate-200 leading-tight">${p.fullAddress || p.address || p.location || "â€”"}</span>
                 </div>
             `;
 
         // Compensation
         document.getElementById("prof-compensation-details").innerHTML = `
                 <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
-                    <span class="text-slate-400">Current CTC</span><span class="font-bold text-slate-800 dark:text-slate-200">${p.currentCTC ? "₹" + p.currentCTC + "/mo" : "—"}</span>
+                    <span class="text-slate-400">Current CTC</span><span class="font-bold text-slate-800 dark:text-slate-200">${p.currentCTC ? "â‚¹" + p.currentCTC + "/mo" : "â€”"}</span>
                 </div>
                 <div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
-                    <span class="text-slate-400">Expected CTC</span><span class="font-bold text-slate-800 dark:text-slate-200">${p.expectedCTC ? "₹" + p.expectedCTC + "/mo" : "—"}</span>
+                    <span class="text-slate-400">Expected CTC</span><span class="font-bold text-slate-800 dark:text-slate-200">${p.expectedCTC ? "â‚¹" + p.expectedCTC + "/mo" : "â€”"}</span>
                 </div>
             `;
 
@@ -5088,7 +5088,7 @@
           if (!hasOpenedChat) {
             hasOpenedChat = true;
             setTimeout(() => {
-              addBotMessage("Hi! I'm your AI Career Assistant. ✨");
+              addBotMessage("Hi! I'm your AI Career Assistant. âœ¨");
               setTimeout(() => {
                 addBotMessage(
                   "I can help you find the right role, answer questions about our company, or assist with your application. How can I help you today?",
@@ -5234,7 +5234,7 @@
 
         if (text === "My Applications") {
           setTimeout(
-            () => addBotMessage("Taking you to your applications now! 📋"),
+            () => addBotMessage("Taking you to your applications now! ðŸ“‹"),
             300,
           );
           setTimeout(() => {
@@ -5303,10 +5303,10 @@
 
         if (text === "How it works?") {
           setTimeout(() => {
-            addBotMessage("It's simple! 🚀");
+            addBotMessage("It's simple! ðŸš€");
             setTimeout(() => {
               addBotMessage(
-                "1️⃣ Tell me what role you're looking for.\n2️⃣ Tell me your preferred location.\n3️⃣ I'll find the best match and open it for you instantly!",
+                "1ï¸âƒ£ Tell me what role you're looking for.\n2ï¸âƒ£ Tell me your preferred location.\n3ï¸âƒ£ I'll find the best match and open it for you instantly!",
               );
               setTimeout(
                 () => addBotOptions(["Let's search!", "Close Chat"]),
@@ -5320,7 +5320,7 @@
         if (text === "Contact Support") {
           setTimeout(() => {
             addBotMessage(
-              "For support, please reach out to your recruiter or contact HR directly. I can still help you find jobs! 💬",
+              "For support, please reach out to your recruiter or contact HR directly. I can still help you find jobs! ðŸ’¬",
             );
             addBotOptions(["Find a Job", "Close Chat"]);
           }, 600);
