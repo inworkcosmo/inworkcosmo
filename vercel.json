@@ -16,6 +16,10 @@
     {
       "source": "/api/:path*",
       "destination": "/api/:path*"
+    },
+    {
+      "source": "/reset-password",
+      "destination": "/reset-password.html"
     }
   ]
 }
